@@ -46,12 +46,10 @@ def login_post():
         session["flag"] = True
 
     session["uid"] = uid
-    print(session)
     if session["flag"]:
         return redirect("/")
     else:
         return render_template("login.html",title="ログインページ",message="パスワードが違います")
-
 
 @app.route('/logout')
 def logout():
